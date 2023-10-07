@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func calculateEntropy(data []byte) float64 {
+func calculateEntropy(data []byte) (float64, int) {
 	entropy := 0.0
 	totalBytes := float64(len(data))
 
@@ -22,7 +22,7 @@ func calculateEntropy(data []byte) float64 {
 		entropy -= probability * math.Log2(probability)
 	}
 
-	return entropy
+	return entropy, len(data)
 }
 
 func main() {
@@ -51,7 +51,8 @@ func main() {
 			log.Fatalf("Error reading section data: %v\n", err)
 		}
 
-		entropy := calculateEntropy(sectionData)
+		entropy, byteCount := calculateEntropy(sectionData)
 		fmt.Printf("Entropy: %f\n", entropy)
+		fmt.Printf("Byte Count: %d\n", byteCount)
 	}
 }
