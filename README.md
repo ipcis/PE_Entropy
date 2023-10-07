@@ -1,6 +1,13 @@
 # PE_Entropy
 
 ```
+git clone https://github.com/ipcis/PE_Entropy.git
+```
+
+```
+go build -o pe_entropy.exe pe_entropy.go
+```
+```
 pe_entropy.exe c:\Windows\System32\calc.exe
 Section: .text
 Entropy: 5.806535
