@@ -1,6 +1,6 @@
 # PE_Entropy
 
-´´´
+```
 pe_entropy.exe c:\Windows\System32\calc.exe
 Section: .text
 Entropy: 5.806535
@@ -14,4 +14,4 @@ Section: .rsrc
 Entropy: 2.813526
 Section: .reloc
 Entropy: 0.463472
-´´´
+```
