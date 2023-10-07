@@ -4,6 +4,7 @@ import (
 	"debug/pe"
 	"fmt"
 	"log"
+	"math"
 	"os"
 )
 
