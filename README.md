@@ -1,5 +1,7 @@
 # PE_Entropy
 
+The Entropy Calculator is a simple command-line tool written in Go that calculates the entropy of data within a file, such as a binary executable, a text file, or any other type of file. Entropy is a measure of randomness or unpredictability within a set of data, and it can be used for various purposes, including file analysis and security assessments.
+
 ```
 git clone https://github.com/ipcis/PE_Entropy.git
 ```
