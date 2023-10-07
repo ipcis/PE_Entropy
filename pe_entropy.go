@@ -8,6 +8,16 @@ import (
 	"os"
 )
 
+func categorizeEntropy(entropy float64) string {
+	if entropy < 2.0 {
+		return "Low"
+	} else if entropy >= 2.0 && entropy < 4.0 {
+		return "Mid"
+	} else {
+		return "High"
+	}
+}
+
 func calculateEntropy(data []byte) (float64, int) {
 	entropy := 0.0
 	totalBytes := float64(len(data))
@@ -52,7 +62,9 @@ func main() {
 		}
 
 		entropy, byteCount := calculateEntropy(sectionData)
-		fmt.Printf("Entropy: %f\n", entropy)
+		entropyCategory := categorizeEntropy(entropy)
+
+		fmt.Printf("Entropy: %.6f (%s)\n", entropy, entropyCategory)
 		fmt.Printf("Byte Count: %d\n", byteCount)
 	}
 }
